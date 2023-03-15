@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.5">
+  <POU Name="MAIN" Id="{c77aa319-5c1d-4123-b1e2-660c87d39da9}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM MAIN
+VAR
+	AXIS1:axis_ref;
+	POWER1:mc_power;
+	power_do: BOOL;
+
+	move_abs: MC_MoveAbsolute;
+	abs_do: BOOL;
+	position: LREAL;
+	vel: LREAL;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[POWER1(
+	Axis:= AXIS1, 
+	Enable:= power_do, 
+	Enable_Positive:= TRUE, 
+	Enable_Negative:= TRUE, 
+	Override:= , 
+	BufferMode:= , 
+	Options:= , 
+	Status=> , 
+	Busy=> , 
+	Active=> , 
+	Error=> , 
+	ErrorID=> );
+	
+move_abs(
+	Axis:= AXIS1, 
+	Execute:= abs_do, 
+	Position:= position, 
+	Velocity:= vel, 
+	Acceleration:= , 
+	Deceleration:= , 
+	Jerk:= , 
+	BufferMode:= , 
+	Options:= , 
+	Done=> , 
+	Busy=> , 
+	Active=> , 
+	CommandAborted=> , 
+	Error=> , 
+	ErrorID=> );]]></ST>
+    </Implementation>
+    <LineIds Name="MAIN">
+      <LineId Id="10" Count="11" />
+      <LineId Id="2" Count="0" />
+      <LineId Id="25" Count="0" />
+      <LineId Id="53" Count="14" />
+      <LineId Id="26" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>
