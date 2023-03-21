@@ -1383,11 +1383,11 @@ External Setpoint Generation:
 					<AxisPara>
 						<General UnitName="°"/>
 						<Dynamic AccelerationMaximum="3000" DecelerationMaximum="3000" Acceleration="40" Deceleration="40" Jerk="80"/>
-						<Velo Maximum="25"/>
+						<Velo Fast="25" Maximum="25"/>
 						<OtherSettings AllowMotionCmdToSlave="true"/>
 					</AxisPara>
 					<Encoder Name="Enc" EncType="19">
-						<EncPara ScaleFactorNumerator="360" ScaleFactorDenominator="111476736" MaxCount="#xffffffff">
+						<EncPara ScaleFactorNumerator="130321" ScaleFactorDenominator="40320000000" MaxCount="#xffffffff">
 							<SoftEndMinControl Enable="true" Range="-96"/>
 							<SoftEndMaxControl Enable="true" Range="96"/>
 						</EncPara>
